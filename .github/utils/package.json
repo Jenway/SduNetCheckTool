@@ -1,4 +1,5 @@
 {
+  "type": "module",
   "devDependencies": {
     "generate-evb": "git+ssh://git@github.com:Jenway/generate-evb"
   }
