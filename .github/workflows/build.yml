@@ -55,8 +55,10 @@ jobs:
           Compress-Archive -Path ${{ env.guiProjectDirectory }}\${{ env.appPackagesDirectory }}\* -DestinationPath build\${{ env.appPackagesArchive }}
       
       - name: Pack into single file executable
-        run: | 
-          npm install .\.github\utils\
+        run: |
+          Set-Location .\.github\utils\
+          npm install .
+          Set-Location -
           node .\.github\utils\pack.js
           Move-Item build\SduNetCheckTool.GUI_boxed.exe build\${{ env.appPackagesExecutable }}
       
